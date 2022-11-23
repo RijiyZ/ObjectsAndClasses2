@@ -5,6 +5,7 @@ public class Author {
         this.secondName = secondName;
     }
     public String toString() {
+
         return  firstName + " " + secondName;
     }
 }

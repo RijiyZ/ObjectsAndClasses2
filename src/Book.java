@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book {
     private final String name;
     private final Author authorName;
@@ -10,29 +12,22 @@ public class Book {
     public String getName(){
         return name;
     }
-    public int getpublicationYear() {
-        return publicationYear;
+    public int getpublicationYear() { return publicationYear; }
+    public Author getAuthorName() { return authorName; }
+    public void setpublicationYear(int publicationYear) { this.publicationYear = publicationYear;}
+    @Override
+    public String toString() {
+        return String.format(String.valueOf((authorName)),name,publicationYear);
     }
-    public Author getAuthorName() {
-        return authorName;
-    }
-    public void setpublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book3 = (Book) o;
+        return publicationYear == book3.publicationYear && Objects.equals(name,book3.name) && Objects.equals(authorName, book3.authorName);
     }
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(publicationYear);
-    }
-    @Override
-    public String toString() {
-        return "/ Автор: " + authorName + " / Дата публикации: " + publicationYear + " / Название книги " + name;
-    }
-    @Override
-    public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        Book book2 = (Book) other;
-        return name.equals(book2.name);
+        return Objects.hash(name, authorName, publicationYear) ;
     }
 }

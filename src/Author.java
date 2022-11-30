@@ -14,7 +14,7 @@ public class Author {
     }
     @Override
     public String toString() {
-        return String.format(firstName, secondName);
+        return String.format("%s %s", firstName, secondName);
     }
     @Override
     public boolean equals(Object o) {

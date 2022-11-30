@@ -17,7 +17,7 @@ public class Book {
     public void setpublicationYear(int publicationYear) { this.publicationYear = publicationYear;}
     @Override
     public String toString() {
-        return String.format(String.valueOf((authorName)),name,publicationYear);
+        return String.format("%s, '%s', %d", authorName, name, publicationYear);
     }
     @Override
     public boolean equals(Object o) {
